@@ -18,8 +18,11 @@ plugins=(
 
 setopt NO_CASE_GLOB        # Set globbing to be case-insensitive
 setopt autocd              # change directory just by typing its name
-setopt CORRECT             # enable zsh correction
-setopt CORRECT_ALL         # enable zsh correction
+# Autocorrect is interferring with git commands, need to override for some of them..
+# setopt CORRECT             # enable zsh correction
+# setopt CORRECT_ALL         # enable zsh correction
+setopt nocorrect
+unsetopt correct_all
 
 setopt ksharrays           # arrays start at 0
 setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
@@ -49,15 +52,15 @@ setopt HIST_IGNORE_DUPS         # do not store duplications
 setopt HIST_FIND_NO_DUPS        # ignore duplicates when searching
 setopt HIST_REDUCE_BLANKS       # removes blank lines from history
 
-######################################################
+##########################################################
 # Prompt
-######################################################
+##########################################################
 
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
 
-######################################################
+#########################################################
 # Completion
-######################################################
+########################################################
 
 # enable completion features
 autoload -Uz compinit
