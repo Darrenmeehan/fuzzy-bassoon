@@ -216,14 +216,6 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
 
-# Python
-
-# alias pip="python3.9 -m pip"
-# FIXME This should only run on MacOS
-if [[ -a /Users/darren/Library/Python/3.9/bin ]]; then
-	path=('/Users/darren/Library/Python/3.9/bin' $path)
-fi
-
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
 typeset -U path
